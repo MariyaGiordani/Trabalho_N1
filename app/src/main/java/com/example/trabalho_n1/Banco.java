@@ -14,7 +14,7 @@ public class Banco extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE carro ( " +
+        db.execSQL("CREATE TABLE carros ( " +
                     " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
                     " marca TEXT NOT NULL, " +
                     " placa TEXT NOT NULL  )");
