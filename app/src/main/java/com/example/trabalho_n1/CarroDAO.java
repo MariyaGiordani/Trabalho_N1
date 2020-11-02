@@ -38,7 +38,7 @@ public class CarroDAO {
         db.delete("carros", " id = " + idCarro, null);
     }
 
-    public static List<Carro> getProdutos(Context context){
+    public static List<Carro> getCarros(Context context){
         List<Carro> lista = new ArrayList<>();
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();
@@ -56,10 +56,10 @@ public class CarroDAO {
         return lista;
     }
 
-    public static Carro getProdutoById(Context context, int idCarro){
+    public static Carro getCarroById(Context context, int idCarro){
         Banco banco = new Banco(context);
         SQLiteDatabase db = banco.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM carro WHERE id = " + idCarro , null);
+        Cursor cursor = db.rawQuery("SELECT * FROM carros WHERE id = " + idCarro , null);
         if( cursor.getCount() > 0 ){
             cursor.moveToFirst();
             Carro c = new Carro();
